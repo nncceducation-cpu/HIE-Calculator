@@ -47,6 +47,14 @@
   .alert button + button{border-left:1px solid #d5d5d5;}
   .alert button.bold{font-weight:600;}
   .note{font-size:12px;color:#666;padding:10px 16px 20px;text-align:center;}
+  .patterns-btn{margin:0 16px 8px;display:block;width:calc(100% - 32px);background:#fff;color:#7B4DFF;border:1.5px solid #7B4DFF;border-radius:6px;padding:11px;font-size:16px;font-weight:600;cursor:pointer;}
+  .patterns-btn:active{opacity:.7;}
+  .alert.wide{max-width:390px;}
+  .fig img{width:100%;display:block;border:1px solid #eee;border-radius:4px;background:#fff;}
+  .figcap{font-size:12px;color:#444;line-height:1.45;padding:8px 2px 0;}
+  .cite{font-size:11px;color:#555;line-height:1.45;padding:12px 2px 2px;border-top:1px solid #e6e6e6;margin-top:10px;}
+  .cite b{display:block;margin-bottom:3px;color:#111;}
+  .cite a{color:#007aff;word-break:break-all;}
 </style>
 </head>
 <body>
@@ -103,7 +111,29 @@
     <span>Low voltage<div class="tag">Depressed background</div></span></label>
 
   <button class="submit" onclick="submit()">Submit</button>
+  <button class="patterns-btn" onclick="openPatterns()">View aEEG patterns</button>
   <div class="note">Web test replica of the HIE Calculator v1.5 logic with a draft aEEG component — for review only. Not for clinical use.</div>
+</div>
+
+<div class="overlay" id="patternsOverlay">
+  <div class="alert wide">
+    <h3>aEEG Background Patterns</h3>
+    <div class="msg">
+      <div class="fig">
+        <img src="https://media.springernature.com/lw685/springer-static/image/chp%3A10.1007%2F978-3-031-55972-3_16/MediaObjects/502523_1_En_16_Fig2_HTML.jpg"
+             alt="aEEG background patterns: continuous (C), discontinuous (DC), burst-suppression (BS), low voltage (LV), and inactive/flat (FT), with their amplitude criteria.">
+      </div>
+      <div class="figcap">Fig. 16.2 — Common classification used to describe aEEG tracing, especially in term infants: continuous (C) with SWC, discontinuous (DC), burst suppression (BS), low voltage (LV), and inactive, flat trace (FT).</div>
+      <div class="cite">
+        <b>Cite this chapter</b>
+        El-Dib, M., de Vries, L.S. (2024). Neurophysiological Monitoring. In: Meijler, G., Mohammad, K. (eds) Neonatal Brain Injury. Springer, Cham. <a href="https://doi.org/10.1007/978-3-031-55972-3_16" target="_blank" rel="noopener">https://doi.org/10.1007/978-3-031-55972-3_16</a>
+        <br><br>Open Access, licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>. Figure reproduced with attribution; no changes made.
+      </div>
+    </div>
+    <div class="actions">
+      <button class="bold" onclick="document.getElementById('patternsOverlay').classList.remove('show')">Close</button>
+    </div>
+  </div>
 </div>
 
 <div class="overlay" id="disclaimerOverlay">
@@ -258,6 +288,8 @@
 
     showAlert('Override', txt, false, o.color, o.verdict);
   }
+
+  function openPatterns(){ document.getElementById('patternsOverlay').classList.add('show'); }
 
   // Show the disclaimer on launch, like the app does.
   document.getElementById('disclaimerMsg').textContent = disclaimerText;
