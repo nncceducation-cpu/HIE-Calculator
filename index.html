@@ -16,8 +16,9 @@
   .qual{background:var(--gold);}
   .critA{background:var(--green);}
   .critB{background:var(--blue);}
-  .aeeg{background:var(--violet);cursor:pointer;user-select:none;}
-  #aeegCaret{display:inline-block;transition:transform .15s;font-size:13px;}
+  .aeeg{background:var(--violet);cursor:pointer;user-select:none;display:flex;align-items:center;justify-content:space-between;}
+  #aeegToggle{font-size:12px;font-weight:700;color:#fff;background:#7B4DFF;border-radius:16px;padding:4px 11px;display:inline-flex;align-items:center;gap:7px;white-space:nowrap;box-shadow:0 1px 2px rgba(0,0,0,.2);}
+  #aeegCaret{display:inline-block;transition:transform .18s;font-size:15px;line-height:1;}
   #aeegCaret.open{transform:rotate(90deg);}
   .collapsed{display:none;}
   .row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;border-bottom:1px solid #eee;font-size:15px;}
@@ -100,7 +101,7 @@
   <div class="row"><span>Seizure</span>
     <label class="sw b"><input type="checkbox" id="seiz"><span class="track"><span class="knob"></span></span></label></div>
 
-  <div class="section aeeg" id="aeegHeader" onclick="toggleAeeg()"><span id="aeegCaret">&#9656;</span>&nbsp;(C) aEEG BACKGROUND (optional)</div>
+  <div class="section aeeg" id="aeegHeader" onclick="toggleAeeg()"><span>&nbsp;(C) aEEG BACKGROUND (optional)</span><span id="aeegToggle"><span id="aeegToggleText">Tap to open</span><span id="aeegCaret">&#9656;</span></span></div>
   <div id="aeegBody" class="collapsed">
     <div class="hint">Select the aEEG background pattern.</div>
     <label class="rrow"><input type="radio" name="aeeg" value="na" checked>
@@ -298,7 +299,9 @@
 
   function toggleAeeg(){
     document.getElementById('aeegBody').classList.toggle('collapsed');
-    document.getElementById('aeegCaret').classList.toggle('open');
+    var isOpen = !document.getElementById('aeegBody').classList.contains('collapsed');
+    document.getElementById('aeegCaret').classList.toggle('open', isOpen);
+    document.getElementById('aeegToggleText').textContent = isOpen ? 'Tap to close' : 'Tap to open';
   }
 
   // Show the disclaimer on launch, like the app does.
