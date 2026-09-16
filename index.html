@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>HIE Calculator</title>
-<meta name="description" content="Therapeutic hypothermia (cooling) eligibility calculator for neonatal hypoxic-ischemic encephalopathy.">
-<meta property="og:title" content="HIE Calculator">
-<meta property="og:description" content="Therapeutic hypothermia (cooling) eligibility calculator for neonatal hypoxic-ischemic encephalopathy.">
+<title>Calculadora de EHI</title>
+<meta name="description" content="Calculadora de elegibilidad para hipotermia terapéutica (enfriamiento) en la encefalopatía hipóxico-isquémica neonatal.">
+<meta property="og:title" content="Calculadora de EHI">
+<meta property="og:description" content="Calculadora de elegibilidad para hipotermia terapéutica (enfriamiento) en la encefalopatía hipóxico-isquémica neonatal.">
 <meta property="og:type" content="website">
 <style>
   :root{
@@ -67,109 +67,109 @@
 </head>
 <body>
 <div class="phone">
-  <div class="titlebar">&nbsp;TO COOL OR NOT TO COOL</div>
+  <div class="titlebar">&nbsp;ENFRIAR O NO ENFRIAR</div>
 
-  <div class="section qual">&nbsp;&nbsp;QUALIFYING CRITERIA</div>
-  <div class="row"><span>Is the Gestational age ≥ 36 weeks</span>
+  <div class="section qual">&nbsp;&nbsp;CRITERIOS DE ELEGIBILIDAD</div>
+  <div class="row"><span>¿La edad gestacional es ≥ 36 semanas?</span>
     <label class="sw g"><input type="checkbox" id="ga"><span class="track"><span class="knob"></span></span></label></div>
-  <div class="row"><span>Is the baby ≤ 6 hours from birth</span>
+  <div class="row"><span>¿El bebé tiene ≤ 6 horas de vida?</span>
     <label class="sw g"><input type="checkbox" id="six"><span class="track"><span class="knob"></span></span></label></div>
 
-  <div class="section critA">&nbsp;&nbsp;(A) Evidence of peripartum hypoxia-ischemia</div>
-  <div class="row"><span>Apgar ≤ 5 @ 10 minutes</span>
+  <div class="section critA">&nbsp;&nbsp;(A) Evidencia de hipoxia-isquemia periparto</div>
+  <div class="row"><span>Apgar ≤ 5 a los 10 minutos</span>
     <label class="sw a"><input type="checkbox" id="apgar"><span class="track"><span class="knob"></span></span></label></div>
-  <div class="row"><span>Cord or first hour arterial gas base excess ≤ -16 mmol/L</span>
+  <div class="row"><span>Exceso de base ≤ −16 mmol/L en gasometría arterial del cordón o de la primera hora</span>
     <label class="sw a"><input type="checkbox" id="be"><span class="track"><span class="knob"></span></span></label></div>
-  <div class="row"><span>IPPV ≥ 10 minutes</span>
+  <div class="row"><span>VPP intermitente ≥ 10 minutos</span>
     <label class="sw a"><input type="checkbox" id="ippv"><span class="track"><span class="knob"></span></span></label></div>
-  <div class="row"><span>Cord or first hour arterial gas pH ≤ 7</span>
+  <div class="row"><span>pH ≤ 7 en gasometría arterial del cordón o de la primera hora</span>
     <label class="sw a"><input type="checkbox" id="ph"><span class="track"><span class="knob"></span></span></label></div>
 
-  <div class="section critB">&nbsp;&nbsp;(B) Evidence of Moderate-to-Severe Encephalopathy (clinical)</div>
-  <div class="row"><span>Decreased level of consciousness</span>
+  <div class="section critB">&nbsp;&nbsp;(B) Evidencia clínica de encefalopatía moderada a grave</div>
+  <div class="row"><span>Disminución del nivel de conciencia</span>
     <label class="sw b"><input type="checkbox" id="cons"><span class="track"><span class="knob"></span></span></label></div>
-  <div class="row"><span>Decreased or no spontaneous activity</span>
+  <div class="row"><span>Actividad espontánea disminuida o ausente</span>
     <label class="sw b"><input type="checkbox" id="spont"><span class="track"><span class="knob"></span></span></label></div>
-  <div class="row"><span>Abnormal posture</span>
+  <div class="row"><span>Postura anormal</span>
     <label class="sw b"><input type="checkbox" id="post"><span class="track"><span class="knob"></span></span></label></div>
-  <div class="row"><span>Decreased Tone</span>
+  <div class="row"><span>Tono muscular disminuido</span>
     <label class="sw b"><input type="checkbox" id="tone"><span class="track"><span class="knob"></span></span></label></div>
-  <div class="row"><span>Weakness in any primitive reflexes (Moro or suck)</span>
+  <div class="row"><span>Debilidad de algún reflejo primitivo (Moro o succión)</span>
     <label class="sw b"><input type="checkbox" id="reflex"><span class="track"><span class="knob"></span></span></label></div>
-  <div class="row"><span>Constricted or variable pupils</span>
+  <div class="row"><span>Pupilas contraídas o variables</span>
     <label class="sw b"><input type="checkbox" id="pupil"><span class="track"><span class="knob"></span></span></label></div>
-  <div class="row"><span>Bradycardia or variable heart rate</span>
+  <div class="row"><span>Bradicardia o frecuencia cardíaca variable</span>
     <label class="sw b"><input type="checkbox" id="brady"><span class="track"><span class="knob"></span></span></label></div>
-  <div class="row"><span>Shallow breathing or apnea</span>
+  <div class="row"><span>Respiración superficial o apnea</span>
     <label class="sw b"><input type="checkbox" id="apnea"><span class="track"><span class="knob"></span></span></label></div>
-  <div class="row"><span>Seizure</span>
+  <div class="row"><span>Convulsiones</span>
     <label class="sw b"><input type="checkbox" id="seiz"><span class="track"><span class="knob"></span></span></label></div>
 
-  <div class="section aeeg" id="aeegHeader" onclick="toggleAeeg()"><span>&nbsp;(C) aEEG BACKGROUND (optional)</span><span id="aeegToggle"><span id="aeegToggleText">Tap to open</span><span id="aeegCaret">&#9656;</span></span></div>
+  <div class="section aeeg" id="aeegHeader" onclick="toggleAeeg()"><span>&nbsp;(C) ACTIVIDAD DE FONDO EN aEEG (opcional)</span><span id="aeegToggle"><span id="aeegToggleText">Toque para abrir</span><span id="aeegCaret">&#9656;</span></span></div>
   <div id="aeegBody" class="collapsed">
-    <div class="hint">Select the aEEG background pattern.</div>
+    <div class="hint">Seleccione el patrón de fondo del aEEG.</div>
     <label class="rrow"><input type="radio" name="aeeg" value="na" checked>
-      <span>Not recorded / not available<div class="tag">Result falls back to (B) alone</div></span></label>
+      <span>No registrado/no disponible<div class="tag">El resultado se basa únicamente en (B)</div></span></label>
     <label class="rrow"><input type="radio" name="aeeg" value="cnv">
-      <span>Continuous normal voltage (CNV)<div class="tag">Normal background</div></span></label>
+      <span>Voltaje normal continuo (CNV)<div class="tag">Actividad de fondo normal</div></span></label>
     <label class="rrow"><input type="radio" name="aeeg" value="dnv">
-      <span>Discontinuous normal voltage (DNV)<div class="tag">Depressed background</div></span></label>
+      <span>Voltaje normal discontinuo (DNV)<div class="tag">Actividad de fondo deprimida</div></span></label>
     <label class="rrow"><input type="radio" name="aeeg" value="bs">
-      <span>Burst suppression (BS)<div class="tag">Depressed background</div></span></label>
+      <span>Patrón de brote-supresión (BS)<div class="tag">Actividad de fondo deprimida</div></span></label>
     <label class="rrow"><input type="radio" name="aeeg" value="lv">
-      <span>Low voltage<div class="tag">Depressed background</div></span></label>
-    <button class="patterns-btn" onclick="openPatterns()">View aEEG patterns</button>
+      <span>Bajo voltaje<div class="tag">Actividad de fondo deprimida</div></span></label>
+    <button class="patterns-btn" onclick="openPatterns()">Ver patrones de aEEG</button>
   </div>
 
-  <button class="submit" onclick="submit()">Submit</button>
-  <div class="note">Web test replica of the HIE Calculator v1.5 logic with a draft aEEG component — for review only. Not for clinical use.</div>
+  <button class="submit" onclick="submit()">Calcular</button>
+  <div class="note">Réplica web de prueba de la lógica de la Calculadora de EHI v1.5, con un componente de aEEG en borrador; solo para revisión. No apta para uso clínico.</div>
 </div>
 
 <div class="overlay" id="patternsOverlay">
   <div class="alert wide">
-    <h3>aEEG Background Patterns</h3>
+    <h3>Patrones de fondo del aEEG</h3>
     <div class="msg">
       <div class="fig">
         <img src="https://media.springernature.com/lw685/springer-static/image/chp%3A10.1007%2F978-3-031-55972-3_16/MediaObjects/502523_1_En_16_Fig2_HTML.jpg"
-             alt="aEEG background patterns: continuous (C), discontinuous (DC), burst-suppression (BS), low voltage (LV), and inactive/flat (FT), with their amplitude criteria.">
+             alt="Patrones de fondo del aEEG: continuo (C), discontinuo (DC), brote-supresión (BS), bajo voltaje (LV) e inactivo/plano (FT), con sus criterios de amplitud.">
       </div>
-      <div class="figcap">Fig. 16.2 — Common classification used to describe aEEG tracing, especially in term infants: continuous (C) with SWC, discontinuous (DC), burst suppression (BS), low voltage (LV), and inactive, flat trace (FT).</div>
+      <div class="figcap">Fig. 16.2 — Clasificación habitual para describir el trazado de aEEG, especialmente en recién nacidos a término: continuo (C) con ciclos de sueño-vigilia, discontinuo (DC), brote-supresión (BS), bajo voltaje (LV) y trazado inactivo o plano (FT).</div>
       <div class="cite">
-        <b>Cite this chapter</b>
-        El-Dib, M., de Vries, L.S. (2024). Neurophysiological Monitoring. In: Meijler, G., Mohammad, K. (eds) Neonatal Brain Injury. Springer, Cham. <a href="https://doi.org/10.1007/978-3-031-55972-3_16" target="_blank" rel="noopener">https://doi.org/10.1007/978-3-031-55972-3_16</a>
-        <br><br>Open Access, licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>. Figure reproduced with attribution; no changes made.
+        <b>Cite este capítulo</b>
+        El-Dib, M., de Vries, L.S. (2024). Neurophysiological Monitoring. En: Meijler, G., Mohammad, K. (eds), Neonatal Brain Injury. Springer, Cham. <a href="https://doi.org/10.1007/978-3-031-55972-3_16" target="_blank" rel="noopener">https://doi.org/10.1007/978-3-031-55972-3_16</a>
+        <br><br>Acceso abierto, bajo licencia <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>. Figura reproducida con atribución y sin modificaciones.
       </div>
     </div>
     <div class="actions">
-      <button class="bold" onclick="document.getElementById('patternsOverlay').classList.remove('show')">Close</button>
+      <button class="bold" onclick="document.getElementById('patternsOverlay').classList.remove('show')">Cerrar</button>
     </div>
   </div>
 </div>
 
 <div class="overlay" id="disclaimerOverlay">
   <div class="alert">
-    <h3>Disclaimer</h3>
+    <h3>Aviso legal</h3>
     <div class="msg" id="disclaimerMsg"></div>
     <div class="actions">
-      <button class="bold" onclick="document.getElementById('disclaimerOverlay').classList.remove('show')">Agree</button>
+      <button class="bold" onclick="document.getElementById('disclaimerOverlay').classList.remove('show')">Acepto</button>
     </div>
   </div>
 </div>
 
 <div class="overlay" id="overlay">
   <div class="alert">
-    <h3 id="alertTitle">Result</h3>
+    <h3 id="alertTitle">Resultado</h3>
     <div class="msg" id="alertMsg"></div>
     <div class="actions" id="alertActions"></div>
   </div>
 </div>
 
 <script>
-  const disclaimerText = "Please read the following disclaimer before proceeding with use of the HIE calculator Mobile Application.\n\nThe purpose of this Application is to make cooling criteria more accessible and easy to use. It DOES NOT replace clinical judgement and assessment.\n\nThis version includes a draft aEEG component that is under expert review and is not part of the released application.\n\nThis calculator is based on the American Academy of Pediatrics (AAP) clinical report: Zanelli SA, Wusthoff CJ, Lucke AM, Kaufman DA; Committee on Fetus and Newborn; Section on Neurology. Therapeutic Hypothermia for Neonatal Hypoxic-Ischemic Encephalopathy: Clinical Report. Pediatrics. 2026;157(2):e2025073627.\n\nBy using this Application you hereby waive any claims, causes of action and demands, whether in tort or contract, against the developer (including its employees, directors and agents) in any way related to use of the Application and the information derived from it.\n\nThe developer is not responsible for any decision made using this application.\n\nThe Application is provided as-is with no representations or warranties of any kind, express, statutory or implied, as to the operation of the Application, or the information, content, materials, or products included on the Application. To the fullest extent permissible by applicable law, the developer and its officers, directors, employees and contractors disclaim all warranties, express, statutory, or implied, including, but not limited to, implied warranties of merchantability, fitness for a particular purpose or non-infringement.\n\nThe developer does not warrant that all aspects of the Application will be available at any time or from any particular location, will be secure or error-free, that defects will be corrected, or that the Application is free of viruses or other potentially harmful components.\n\nI agree to the above Terms of Use for the HIE cooling calculator Application.";
+  const disclaimerText = "Lea el siguiente aviso legal antes de utilizar la aplicación móvil Calculadora de EHI.\n\nEl propósito de esta aplicación es hacer que los criterios de enfriamiento sean más accesibles y fáciles de usar. NO sustituye el juicio ni la evaluación clínica.\n\nEsta versión incluye un componente de aEEG en borrador que está siendo revisado por expertos y no forma parte de la aplicación publicada.\n\nEsta calculadora se basa en el informe clínico de la Academia Estadounidense de Pediatría (AAP): Zanelli SA, Wusthoff CJ, Lucke AM, Kaufman DA; Committee on Fetus and Newborn; Section on Neurology. Therapeutic Hypothermia for Neonatal Hypoxic-Ischemic Encephalopathy: Clinical Report. Pediatrics. 2026;157(2):e2025073627.\n\nAl utilizar esta aplicación, usted renuncia a cualquier reclamación, causa de acción o demanda, ya sea extracontractual o contractual, contra el desarrollador (incluidos sus empleados, directores y agentes) que esté relacionada de cualquier manera con el uso de la aplicación y la información obtenida de ella.\n\nEl desarrollador no se responsabiliza de ninguna decisión tomada mediante esta aplicación.\n\nLa aplicación se proporciona tal cual, sin declaraciones ni garantías de ningún tipo, expresas, legales o implícitas, respecto de su funcionamiento o de la información, el contenido, los materiales o los productos incluidos en ella. En la máxima medida permitida por la legislación aplicable, el desarrollador y sus directivos, directores, empleados y contratistas rechazan toda garantía expresa, legal o implícita, incluidas, entre otras, las garantías implícitas de comerciabilidad, idoneidad para un fin determinado o no infracción.\n\nEl desarrollador no garantiza que todos los aspectos de la aplicación estén disponibles en todo momento o desde cualquier ubicación, que sean seguros o estén libres de errores, que los defectos se corrijan ni que la aplicación esté libre de virus u otros componentes potencialmente dañinos.\n\nAcepto las condiciones de uso anteriores de la aplicación Calculadora de EHI para enfriamiento.";
 
-  const gaStatement = "Therapeutic hypothermia is not recommended in infants born less than 35 weeks’ gestational age. There is limited evidence regarding the safety and effectiveness of therapeutic hypothermia for neonates born at 35 0/7 to 35 6/7 weeks’ gestation; it may be considered in discussion of potential risks and benefits with families.";
-  const ageStatement = "Initiation of hypothermia between 6 and 24 hours after birth, in infants who did not initially meet criteria or were unable to have therapeutic hypothermia initiated in the first 6 hours after birth, may be considered after discussion with the parent or guardian of possible benefit and associated risk.";
-  const discussStatement = "The case should be discussed with a senior physician and, if possible, with the parents.";
+  const gaStatement = "No se recomienda la hipotermia terapéutica en bebés nacidos con menos de 35 semanas de edad gestacional. La evidencia sobre la seguridad y la eficacia de la hipotermia terapéutica en recién nacidos de 35 0/7 a 35 6/7 semanas de gestación es limitada; puede considerarse después de hablar con las familias sobre los posibles riesgos y beneficios.";
+  const ageStatement = "En bebés que inicialmente no cumplían los criterios o en quienes no fue posible iniciar la hipotermia terapéutica durante las primeras 6 horas de vida, puede considerarse iniciarla entre las 6 y las 24 horas después del nacimiento tras hablar con el padre, la madre o el tutor sobre los posibles beneficios y riesgos asociados.";
+  const discussStatement = "El caso debe consultarse con un médico sénior y, si es posible, con los padres.";
 
   const RED = '#cc0000', AMBER = '#d98c00', GREEN = '#008c26';
 
@@ -189,8 +189,8 @@
 
   // ---- aEEG ----
   const AEEG_LABEL = {
-    na:'Not recorded', cnv:'Continuous normal voltage (CNV)',
-    dnv:'Discontinuous normal voltage (DNV)', bs:'Burst suppression (BS)', lv:'Low voltage'
+    na:'No registrado', cnv:'Voltaje normal continuo (CNV)',
+    dnv:'Voltaje normal discontinuo (DNV)', bs:'Brote-supresión (BS)', lv:'Bajo voltaje'
   };
   function aeeg(){ return document.querySelector('input[name="aeeg"]:checked').value; }
   function aeegKnown(){ return aeeg() !== 'na'; }
@@ -203,36 +203,36 @@
     const known = aeegKnown(), dep = aeegDepressed();
 
     if(!aMet){
-      return {kind:'noqualify', verdict:'DOES NOT QUALIFY', color:GREEN,
-        text:'Criteria A is not met, so the infant does not satisfy the criteria for therapeutic hypothermia.'};
+      return {kind:'noqualify', verdict:'NO CUMPLE LOS CRITERIOS', color:GREEN,
+        text:'No se cumple el criterio A; por lo tanto, el bebé no satisface los criterios para recibir hipotermia terapéutica.'};
     }
     if(!known){
-      if(bMet) return {kind:'qualify', verdict:'QUALIFIES FOR THERAPEUTIC HYPOTHERMIA', color:RED,
-        text:'Criteria A and Criteria B are met. No aEEG background was recorded, so the result is based on the clinical examination alone.'};
-      return {kind:'noqualify', verdict:'DOES NOT QUALIFY — REASSESS', color:AMBER,
-        text:'Criteria A is met but Criteria B is not. The infant does not currently qualify for therapeutic hypothermia. Serial neurological examinations are recommended to reassess for evolving encephalopathy.'};
+      if(bMet) return {kind:'qualify', verdict:'CUMPLE LOS CRITERIOS PARA HIPOTERMIA TERAPÉUTICA', color:RED,
+        text:'Se cumplen los criterios A y B. No se registró la actividad de fondo del aEEG, por lo que el resultado se basa únicamente en el examen clínico.'};
+      return {kind:'noqualify', verdict:'NO CUMPLE LOS CRITERIOS — REEVALUAR', color:AMBER,
+        text:'Se cumple el criterio A, pero no el criterio B. Actualmente, el bebé no cumple los criterios para recibir hipotermia terapéutica. Se recomiendan evaluaciones neurológicas seriadas para detectar la posible evolución de la encefalopatía.'};
     }
     if(dep && bMet){
-      return {kind:'qualify', verdict:'QUALIFIES FOR THERAPEUTIC HYPOTHERMIA', color:RED,
-        text:'A depressed aEEG background (' + AEEG_LABEL[aeeg()] + ') together with Criteria B qualifies the infant for therapeutic hypothermia.'};
+      return {kind:'qualify', verdict:'CUMPLE LOS CRITERIOS PARA HIPOTERMIA TERAPÉUTICA', color:RED,
+        text:'Una actividad de fondo deprimida en el aEEG (' + AEEG_LABEL[aeeg()] + '), junto con el criterio B, hace que el bebé cumpla los criterios para recibir hipotermia terapéutica.'};
     }
     if(!dep && bMet){
-      return {kind:'discuss', verdict:'DISCUSS WITH SENIOR PHYSICIAN', color:AMBER,
-        text:'Discrepancy: the aEEG background is continuous normal voltage (CNV) but Criteria B is fulfilled.\n\n' + discussStatement};
+      return {kind:'discuss', verdict:'CONSULTAR CON UN MÉDICO SÉNIOR', color:AMBER,
+        text:'Discrepancia: la actividad de fondo del aEEG muestra voltaje normal continuo (CNV), pero se cumple el criterio B.\n\n' + discussStatement};
     }
     if(dep && !bMet){
-      return {kind:'discuss', verdict:'DISCUSS WITH SENIOR PHYSICIAN', color:AMBER,
-        text:'Discrepancy: the aEEG background is depressed (' + AEEG_LABEL[aeeg()] + ') but Criteria B is not fulfilled.\n\n' + discussStatement};
+      return {kind:'discuss', verdict:'CONSULTAR CON UN MÉDICO SÉNIOR', color:AMBER,
+        text:'Discrepancia: la actividad de fondo del aEEG está deprimida (' + AEEG_LABEL[aeeg()] + '), pero no se cumple el criterio B.\n\n' + discussStatement};
     }
     // CNV and Criteria B not met — concordant, no cooling
-    return {kind:'noqualify', verdict:'DOES NOT QUALIFY — REASSESS', color:AMBER,
-      text:'The aEEG background is continuous normal voltage (CNV) and Criteria B is not fulfilled. The infant does not currently qualify for therapeutic hypothermia. Serial neurological examinations are recommended to reassess for evolving encephalopathy.'};
+    return {kind:'noqualify', verdict:'NO CUMPLE LOS CRITERIOS — REEVALUAR', color:AMBER,
+      text:'La actividad de fondo del aEEG muestra voltaje normal continuo (CNV) y no se cumple el criterio B. Actualmente, el bebé no cumple los criterios para recibir hipotermia terapéutica. Se recomiendan evaluaciones neurológicas seriadas para detectar la posible evolución de la encefalopatía.'};
   }
 
   function summary(){
-    return '\n\nCriteria A (metabolic / resuscitation): ' + (metabolicMet() ? 'met' : 'not met') +
-           '\nCriteria B (encephalopathy): ' + (encephalopathyMet() ? 'met' : 'not met') +
-           '\naEEG background: ' + AEEG_LABEL[aeeg()];
+    return '\n\nCriterio A (metabólico/reanimación): ' + (metabolicMet() ? 'cumplido' : 'no cumplido') +
+           '\nCriterio B (encefalopatía): ' + (encephalopathyMet() ? 'cumplido' : 'no cumplido') +
+           '\nActividad de fondo del aEEG: ' + AEEG_LABEL[aeeg()];
   }
 
   function showAlert(title, msg, allowOverride, color, verdict){
@@ -251,12 +251,12 @@
     actions.innerHTML = '';
     if(allowOverride){
       const b = document.createElement('button');
-      b.className='bold'; b.textContent='Override';
+      b.className='bold'; b.textContent='Anular criterio';
       b.onclick = overrideResult;
       actions.appendChild(b);
     }
     const d = document.createElement('button');
-    d.textContent='Dismiss';
+    d.textContent='Cerrar';
     d.onclick = ()=>document.getElementById('overlay').classList.remove('show');
     actions.appendChild(d);
     document.getElementById('overlay').classList.add('show');
@@ -268,35 +268,35 @@
 
     // Gates satisfied — report the outcome directly.
     if(!gaOff && !ageOff){
-      showAlert('Result', o.text + summary(), false, o.color, o.verdict);
+      showAlert('Resultado', o.text + summary(), false, o.color, o.verdict);
       return;
     }
 
     // A gate failed.
-    let txt = 'Does not satisfy criteria for therapeutic hypothermia.\n\n' + o.text;
-    if(gaOff) txt += '\n\nThe infant does not meet the gestational age criterion (≥ 36 weeks).\n\n' + gaStatement;
-    if(ageOff) txt += '\n\nThe infant is more than 6 hours from birth.\n\n' + ageStatement;
+    let txt = 'No cumple los criterios para recibir hipotermia terapéutica.\n\n' + o.text;
+    if(gaOff) txt += '\n\nEl bebé no cumple el criterio de edad gestacional (≥ 36 semanas).\n\n' + gaStatement;
+    if(ageOff) txt += '\n\nEl bebé tiene más de 6 horas de vida.\n\n' + ageStatement;
     txt += summary();
 
     // Override only when the gate is the sole barrier (the infant would otherwise qualify).
     const color = (o.kind === 'qualify') ? GREEN : o.color;
-    showAlert('Result', txt, o.kind === 'qualify', color, 'DOES NOT QUALIFY');
+    showAlert('Resultado', txt, o.kind === 'qualify', color, 'NO CUMPLE LOS CRITERIOS');
   }
 
   function overrideResult(){
     const gaOff = !on('ga'), ageOff = !on('six');
     const reasons = [];
-    if(gaOff) reasons.push('gestational age (< 36 weeks)');
-    if(ageOff) reasons.push('age (> 6 hours from birth)');
+    if(gaOff) reasons.push('edad gestacional (< 36 semanas)');
+    if(ageOff) reasons.push('edad (> 6 horas de vida)');
     const o = coreOutcome();
 
-    let txt = o.text + '\n\nThis override sets aside the ' + reasons.join(' and ') +
-              ' criterion. Use clinical judgement together with the guidance below:';
+    let txt = o.text + '\n\nEsta anulación deja de lado el criterio de ' + reasons.join(' y ') +
+              '. Utilice el juicio clínico junto con la siguiente orientación:';
     if(gaOff) txt += '\n\n' + gaStatement;
     if(ageOff) txt += '\n\n' + ageStatement;
     txt += summary();
 
-    showAlert('Override', txt, false, o.color, o.verdict);
+    showAlert('Anulación de criterio', txt, false, o.color, o.verdict);
   }
 
   function openPatterns(){ document.getElementById('patternsOverlay').classList.add('show'); }
@@ -305,7 +305,7 @@
     document.getElementById('aeegBody').classList.toggle('collapsed');
     var isOpen = !document.getElementById('aeegBody').classList.contains('collapsed');
     document.getElementById('aeegCaret').classList.toggle('open', isOpen);
-    document.getElementById('aeegToggleText').textContent = isOpen ? 'Tap to close' : 'Tap to open';
+    document.getElementById('aeegToggleText').textContent = isOpen ? 'Toque para cerrar' : 'Toque para abrir';
   }
 
   // Show the disclaimer on launch, like the app does.
