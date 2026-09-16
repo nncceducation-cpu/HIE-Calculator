@@ -9,14 +9,7 @@
 <meta property="og:description" content="Calculadora de elegibilidade para hipotermia terapêutica em recém-nascidos com encefalopatia hipóxico-isquêmica.">
 <meta property="og:type" content="website">
 <script>
-  (function () {
-    var requested = new URLSearchParams(location.search).get('lang');
-    if (['en', 'es', 'fr', 'pt'].includes(requested)) localStorage.setItem('hie-language', requested);
-    var language = requested || localStorage.getItem('hie-language') || (navigator.language || 'en').toLowerCase().split('-')[0];
-    if (language === 'en') location.replace('index.html?lang=en');
-    if (language === 'es') location.replace('es.html?lang=es');
-    if (language === 'fr') location.replace('fr.html?lang=fr');
-  }());
+  localStorage.setItem('hie-language', 'pt');
 </script>
 <style>
   :root{

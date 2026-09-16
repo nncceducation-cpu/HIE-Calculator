@@ -9,14 +9,7 @@
 <meta property="og:description" content="Calculateur d’admissibilité à l’hypothermie thérapeutique chez les nouveau-nés atteints d’encéphalopathie hypoxo-ischémique.">
 <meta property="og:type" content="website">
 <script>
-  (function () {
-    var requested = new URLSearchParams(location.search).get('lang');
-    if (['en', 'es', 'fr', 'pt'].includes(requested)) localStorage.setItem('hie-language', requested);
-    var language = requested || localStorage.getItem('hie-language') || (navigator.language || 'en').toLowerCase().split('-')[0];
-    if (language === 'en') location.replace('index.html?lang=en');
-    if (language === 'es') location.replace('es.html?lang=es');
-    if (language === 'pt') location.replace('pt.html?lang=pt');
-  }());
+  localStorage.setItem('hie-language', 'fr');
 </script>
 <style>
   :root{
