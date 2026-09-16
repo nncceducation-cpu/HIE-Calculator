@@ -10,8 +10,21 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    private var isSpanish: Bool {
-        return Locale.preferredLanguages.first?.lowercased().hasPrefix("es") == true
+    private var languageCode: String {
+        let code = Locale.preferredLanguages.first?.lowercased() ?? "en"
+        if code.hasPrefix("es") { return "es" }
+        if code.hasPrefix("fr") { return "fr" }
+        if code.hasPrefix("pt") { return "pt" }
+        return "en"
+    }
+
+    private func t(_ en: String, _ es: String, _ fr: String, _ pt: String) -> String {
+        switch languageCode {
+        case "es": return es
+        case "fr": return fr
+        case "pt": return pt
+        default: return en
+        }
     }
 
    
@@ -39,11 +52,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if isSpanish { localizeInterface(in: view) }
+        if languageCode != "en" { localizeInterface(in: view) }
     }
 
     private func localizeInterface(in root: UIView) {
-        let translations: [String: String] = [
+        let spanish: [String: String] = [
             "Is the Gestational age ≥ 36 weeks ": "¿La edad gestacional es ≥ 36 semanas?",
             "Is the baby ≤ 6 hours from birth": "¿El bebé tiene ≤ 6 horas de vida?",
             "  QUALIFYING CRITERIA": "  CRITERIOS DE ELEGIBILIDAD",
@@ -57,18 +70,55 @@ class ViewController: UIViewController {
             "Decreased level of consciousness": "Disminución del nivel de conciencia",
             "Decreased or no spontaneous activity": "Actividad espontánea disminuida o ausente",
             "Abnormal posture": "Postura anormal",
-            "Decreased Tone": "Tono muscular disminuido",
-            "Weakness in any primitive reflexes ( Moro or suck )": "Debilidad de algún reflejo primitivo (Moro o succión)",
-            "Constricted or variable pupils": "Pupilas contraídas o variables",
-            "Bradycardia or variable heart rate": "Bradicardia o frecuencia cardíaca variable",
+            "Decreased Tone": "Tono disminuido",
+            "Weakness in any primitive reflexes ( Moro or suck )": "Debilidad en cualquier reflejo primitivo (Moro o succión)",
+            "Constricted or variable pupils": "Pupilas mióticas o arreactivas",
+            "Bradycardia or variable heart rate": "Bradicardia o ritmo cardíaco variable",
             "Shallow breathing or apnea": "Respiración superficial o apnea",
-            "Seizure": "Convulsiones"
+            "Seizure": "Crisis epilépticas"
         ]
+        let french: [String: String] = [
+            "Is the Gestational age ≥ 36 weeks ": "L’âge gestationnel est-il ≥ 36 semaines?",
+            "Is the baby ≤ 6 hours from birth": "Le nouveau-né a-t-il ≤ 6 heures de vie?",
+            "  QUALIFYING CRITERIA": "  CRITÈRES D’ADMISSIBILITÉ",
+            "Apgar ≤ 5 @ 10 minutes ": "Score d’Apgar ≤ 5 à 10 minutes",
+            "Cord or first hour arterial gas base excess ≤ -16 mmol/L": "Déficit de bases ≥ 16 mmol/L au gaz du sang ombilical ou de la première heure",
+            "   CRITERIA A": "   CRITÈRE A",
+            "IPPV ≥ 10 minutes": "Ventilation assistée pendant ≥ 10 minutes",
+            "Cord or first hour arterial gas pH ≤ 7": "pH ≤ 7,0 au gaz du sang ombilical ou de la première heure",
+            " TO COOL OR NOT TO COOL": " REFROIDIR OU NE PAS REFROIDIR",
+            "   CRITERIA B": "   CRITÈRE B",
+            "Decreased level of consciousness": "Diminution du niveau de conscience",
+            "Decreased or no spontaneous activity": "Activité spontanée diminuée ou absente",
+            "Abnormal posture": "Posture anormale", "Decreased Tone": "Diminution du tonus",
+            "Weakness in any primitive reflexes ( Moro or suck )": "Réflexes primitifs faibles (Moro ou succion)",
+            "Constricted or variable pupils": "Pupilles contractées ou non réactives",
+            "Bradycardia or variable heart rate": "Bradycardie ou fréquence cardiaque variable",
+            "Shallow breathing or apnea": "Respiration superficielle ou apnée", "Seizure": "Convulsions"
+        ]
+        let portuguese: [String: String] = [
+            "Is the Gestational age ≥ 36 weeks ": "A idade gestacional é ≥ 36 semanas?",
+            "Is the baby ≤ 6 hours from birth": "O recém-nascido tem ≤ 6 horas de vida?",
+            "  QUALIFYING CRITERIA": "  CRITÉRIOS DE TRIAGEM",
+            "Apgar ≤ 5 @ 10 minutes ": "Apgar ≤ 5 aos 10 minutos",
+            "Cord or first hour arterial gas base excess ≤ -16 mmol/L": "Déficit de bases ≥ 16 mmol/L na gasometria arterial do cordão ou da primeira hora",
+            "   CRITERIA A": "   CRITÉRIO A", "IPPV ≥ 10 minutes": "Ventilação assistida por ≥ 10 minutos",
+            "Cord or first hour arterial gas pH ≤ 7": "pH ≤ 7 na gasometria arterial do cordão ou da primeira hora",
+            " TO COOL OR NOT TO COOL": " RESFRIAR OU NÃO RESFRIAR", "   CRITERIA B": "   CRITÉRIO B",
+            "Decreased level of consciousness": "Nível de consciência diminuído",
+            "Decreased or no spontaneous activity": "Atividade espontânea diminuída ou ausente",
+            "Abnormal posture": "Postura anormal", "Decreased Tone": "Tônus diminuído",
+            "Weakness in any primitive reflexes ( Moro or suck )": "Fraqueza em qualquer reflexo primitivo (Moro ou sucção)",
+            "Constricted or variable pupils": "Pupilas mióticas ou arreativas",
+            "Bradycardia or variable heart rate": "Bradicardia ou frequência cardíaca variável",
+            "Shallow breathing or apnea": "Respiração superficial ou apneia", "Seizure": "Crises epilépticas"
+        ]
+        let translations = languageCode == "es" ? spanish : (languageCode == "fr" ? french : portuguese)
         if let label = root as? UILabel, let text = label.text, let translated = translations[text] {
             label.text = translated
         }
         if let button = root as? UIButton, button.title(for: .normal) == "Submit" {
-            button.setTitle("Calcular", for: .normal)
+            button.setTitle(t("Submit", "Calcular", "Calculer", "Calcular"), for: .normal)
         }
         for child in root.subviews { localizeInterface(in: child) }
     }
@@ -97,13 +147,17 @@ class ViewController: UIViewController {
 
     // MARK: - Guidance statements
 
-    var gaStatement: String { return isSpanish
-        ? "No se recomienda la hipotermia terapéutica en bebés nacidos con menos de 35 semanas de edad gestacional. La evidencia sobre su seguridad y eficacia en recién nacidos de 35 0/7 a 35 6/7 semanas de gestación es limitada; puede considerarse después de hablar con las familias sobre los posibles riesgos y beneficios."
-        : "Therapeutic hypothermia is not recommended in infants born less than 35 weeks\u{2019} gestational age. There is limited evidence regarding the safety and effectiveness of therapeutic hypothermia for neonates born at 35 0/7 to 35 6/7 weeks\u{2019} gestation; it may be considered in discussion of potential risks and benefits with families." }
+    var gaStatement: String { return t(
+        "Therapeutic hypothermia is not recommended in infants born less than 35 weeks\u{2019} gestational age. There is limited evidence regarding the safety and effectiveness of therapeutic hypothermia for neonates born at 35 0/7 to 35 6/7 weeks\u{2019} gestation; it may be considered in discussion of potential risks and benefits with families.",
+        "No se recomienda la hipotermia terapéutica en bebés nacidos con menos de 35 semanas de edad gestacional. La evidencia sobre su seguridad y eficacia en recién nacidos de 35 0/7 a 35 6/7 semanas de gestación es limitada; puede considerarse después de hablar con las familias sobre los posibles riesgos y beneficios.",
+        "L’hypothermie thérapeutique n’est pas recommandée chez les nouveau-nés de moins de 35 semaines d’âge gestationnel. Les données entre 35 0/7 et 35 6/7 semaines sont limitées; elle peut être envisagée après discussion des risques et bénéfices avec la famille.",
+        "A hipotermia terapêutica não é recomendada para recém-nascidos com menos de 35 semanas de idade gestacional. As evidências entre 35 0/7 e 35 6/7 semanas são limitadas; ela pode ser considerada após discussão dos riscos e benefícios com a família.") }
 
-    var ageStatement: String { return isSpanish
-        ? "En bebés que inicialmente no cumplían los criterios o en quienes no fue posible iniciar la hipotermia terapéutica durante las primeras 6 horas de vida, puede considerarse iniciarla entre las 6 y las 24 horas después del nacimiento tras hablar con el padre, la madre o el tutor sobre los posibles beneficios y riesgos asociados."
-        : "Initiation of hypothermia between 6 and 24 hours after birth, in infants who did not initially meet criteria or were unable to have therapeutic hypothermia initiated in the first 6 hours after birth, may be considered after discussion with the parent or guardian of possible benefit and associated risk." }
+    var ageStatement: String { return t(
+        "Initiation of hypothermia between 6 and 24 hours after birth, in infants who did not initially meet criteria or were unable to have therapeutic hypothermia initiated in the first 6 hours after birth, may be considered after discussion with the parent or guardian of possible benefit and associated risk.",
+        "En bebés que inicialmente no cumplían los criterios o en quienes no fue posible iniciar la hipotermia terapéutica durante las primeras 6 horas de vida, puede considerarse iniciarla entre las 6 y las 24 horas después del nacimiento tras hablar con el padre, la madre o el tutor sobre los posibles beneficios y riesgos asociados.",
+        "Chez les nouveau-nés qui ne satisfaisaient pas initialement aux critères ou chez qui l’hypothermie n’a pas pu être amorcée dans les 6 premières heures, un début entre 6 et 24 heures peut être envisagé après discussion des bénéfices et risques avec le parent ou tuteur.",
+        "Em recém-nascidos que inicialmente não atendiam aos critérios ou nos quais não foi possível iniciar a hipotermia nas primeiras 6 horas, o início entre 6 e 24 horas pode ser considerado após discussão dos benefícios e riscos com os pais ou responsáveis.") }
 
     // MARK: - Criteria evaluation
 
@@ -146,13 +200,15 @@ class ViewController: UIViewController {
         
         self.present(alertController, animated: true, completion: nil)*/
  
-        let txt = isSpanish
-            ? "Lea el siguiente aviso legal antes de utilizar la aplicación móvil Calculadora de EHI.\n\nEl propósito de esta aplicación es hacer que los criterios de enfriamiento sean más accesibles y fáciles de usar. NO sustituye el juicio ni la evaluación clínica.\n\nEsta calculadora se basa en el informe clínico de la Academia Estadounidense de Pediatría (AAP): Zanelli SA, Wusthoff CJ, Lucke AM, Kaufman DA; Committee on Fetus and Newborn; Section on Neurology. Therapeutic Hypothermia for Neonatal Hypoxic-Ischemic Encephalopathy: Clinical Report. Pediatrics. 2026;157(2):e2025073627.\n\nAl utilizar esta aplicación, usted renuncia a cualquier reclamación, causa de acción o demanda contra el desarrollador relacionada con el uso de la aplicación y la información obtenida de ella.\n\nEl desarrollador no se responsabiliza de ninguna decisión tomada mediante esta aplicación.\n\nLa aplicación se proporciona tal cual, sin declaraciones ni garantías de ningún tipo. El desarrollador no garantiza que esté disponible en todo momento, que sea segura o esté libre de errores, ni que esté libre de componentes potencialmente dañinos.\n\nAcepto las condiciones de uso anteriores de la aplicación Calculadora de EHI para enfriamiento."
-            : "Please read the following disclaimer before proceeding with use of the HIE calculator Mobile Application. \n\nThe purpose of this Application is to make cooling criteria more accessible and easy to use. It DOES NOT replace clinical judgement and assessment.\n\nThis calculator is based on the American Academy of Pediatrics (AAP) clinical report: Zanelli SA, Wusthoff CJ, Lucke AM, Kaufman DA; Committee on Fetus and Newborn; Section on Neurology. Therapeutic Hypothermia for Neonatal Hypoxic-Ischemic Encephalopathy: Clinical Report. Pediatrics. 2026;157(2):e2025073627.\n\nBy using this Application you hereby waive any claims, causes of action and demands, whether in tort or contract, against the developer (including its employees, directors and agents) in any way related to use of the Application and the information derived from it.\n\nThe developer is not responsible for any decision made using this application. \n\nThe Application is provided as-is with no representations or warranties of any kind. The developer does not warrant that all aspects of the Application will be available at any time, will be secure or error-free, or that the Application is free of potentially harmful components.\n\nI agree to the above Terms of Use for the HIE cooling calculator Application."
+        let txt = t(
+            "Please read the following disclaimer before proceeding with use of the HIE calculator Mobile Application.\n\nThe purpose of this Application is to make cooling criteria more accessible and easy to use. It DOES NOT replace clinical judgement and assessment.\n\nThis calculator is based on the American Academy of Pediatrics (AAP) clinical report cited in the app.\n\nThe developer is not responsible for any decision made using this application. The Application is provided as-is with no representations or warranties of any kind.\n\nI agree to the above Terms of Use.",
+            "Lea el siguiente aviso legal antes de utilizar la aplicación móvil Calculadora de EHI.\n\nEsta aplicación facilita el uso de los criterios de hipotermia terapéutica. NO sustituye el juicio ni la evaluación clínica.\n\nLa calculadora se basa en el informe clínico de la AAP citado en la aplicación.\n\nEl desarrollador no se responsabiliza de ninguna decisión tomada mediante esta aplicación. La aplicación se proporciona tal cual, sin garantías de ningún tipo.\n\nAcepto las condiciones de uso anteriores.",
+            "Veuillez lire l’avis suivant avant d’utiliser l’application mobile Calculateur d’EHI.\n\nCette application facilite l’utilisation des critères d’hypothermie thérapeutique. Elle NE remplace PAS le jugement ni l’évaluation clinique.\n\nLe calculateur repose sur le rapport clinique de l’AAP cité dans l’application.\n\nLe développeur n’est responsable d’aucune décision prise à l’aide de cette application. L’application est fournie telle quelle, sans garantie.\n\nJ’accepte les conditions d’utilisation ci-dessus.",
+            "Leia o aviso a seguir antes de utilizar o aplicativo móvel Calculadora de EHI.\n\nEste aplicativo facilita o uso dos critérios de hipotermia terapêutica. Ele NÃO substitui o julgamento nem a avaliação clínica.\n\nA calculadora baseia-se no relatório clínico da AAP citado no aplicativo.\n\nO desenvolvedor não se responsabiliza por decisões tomadas com este aplicativo. O aplicativo é fornecido no estado em que se encontra, sem garantias.\n\nAceito os termos de uso acima.")
         
         
-        let alertController = UIAlertController(title: isSpanish ? "Aviso legal" : "Disclaimer", message: txt, preferredStyle: .alert)
-        let OKAction = UIAlertAction(title: isSpanish ? "Acepto" : "Agree", style: .cancel) { (action) in
+        let alertController = UIAlertController(title: t("Disclaimer", "Aviso legal", "Avis de non-responsabilité", "Aviso legal"), message: txt, preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: t("Agree", "Acepto", "J’accepte", "Aceito"), style: .cancel) { (action) in
             alertController.dismiss(animated: true, completion: nil)
         }
         alertController.addAction(OKAction)
@@ -193,28 +249,28 @@ class ViewController: UIViewController {
 
         var verdict: String
         var verdictColor: UIColor
-        var txt = isSpanish ? "No cumple los criterios para recibir hipotermia terapéutica." : "Does not satisfy criteria for therapeutic hypothermia."
+        var txt = t("Does not satisfy criteria for therapeutic hypothermia.", "No cumple los criterios para recibir hipotermia terapéutica.", "Ne satisfait pas aux critères d’hypothermie thérapeutique.", "Não atende aos critérios para hipotermia terapêutica.")
 
         if borderline {
-            verdict = isSpanish ? "  NO CUMPLE LOS CRITERIOS — REEVALUAR  " : "  DOES NOT QUALIFY \u{2014} REASSESS  "
+            verdict = t("  DOES NOT QUALIFY — REASSESS  ", "  NO CUMPLE LOS CRITERIOS — REEVALUAR  ", "  NON ADMISSIBLE — RÉÉVALUER  ", "  NÃO ATENDE AOS CRITÉRIOS — REAVALIAR  ")
             verdictColor = borderlineColor
-            txt += isSpanish ? "\n\nSe cumple el criterio A, pero no el criterio B. Actualmente, el bebé no cumple los criterios para recibir hipotermia terapéutica. Se recomiendan evaluaciones neurológicas seriadas." : "\n\nCriteria A is met but Criteria B is not. The infant does not currently qualify for therapeutic hypothermia. Serial neurological examinations are recommended to reassess for evolving encephalopathy."
+            txt += t("\n\nCriteria A is met but Criteria B is not. Serial neurological examinations are recommended.", "\n\nSe cumple el criterio A, pero no el criterio B. Se recomiendan evaluaciones neurológicas seriadas.", "\n\nLe critère A est satisfait, mais pas le critère B. Des examens neurologiques sériés sont recommandés.", "\n\nO critério A foi atendido, mas o critério B não. Recomenda-se realizar avaliações neurológicas seriadas.")
         } else {
-            verdict = isSpanish ? "  NO CUMPLE LOS CRITERIOS  " : "  DOES NOT QUALIFY  "
+            verdict = t("  DOES NOT QUALIFY  ", "  NO CUMPLE LOS CRITERIOS  ", "  NON ADMISSIBLE  ", "  NÃO ATENDE AOS CRITÉRIOS  ")
             verdictColor = noQualifyColor
         }
 
         if gaOff {
-            txt += (isSpanish ? "\n\nEl bebé no cumple el criterio de edad gestacional (≥ 36 semanas).\n\n" : "\n\nThe infant does not meet the gestational age criterion (\u{2265} 36 weeks).\n\n") + gaStatement
+            txt += t("\n\nThe infant does not meet the gestational age criterion (≥ 36 weeks).\n\n", "\n\nEl bebé no cumple el criterio de edad gestacional (≥ 36 semanas).\n\n", "\n\nLe nouveau-né ne satisfait pas au critère d’âge gestationnel (≥ 36 semaines).\n\n", "\n\nO recém-nascido não atende ao critério de idade gestacional (≥ 36 semanas).\n\n") + gaStatement
         }
 
         if ageOff {
-            txt += (isSpanish ? "\n\nEl bebé tiene más de 6 horas de vida.\n\n" : "\n\nThe infant is more than 6 hours from birth.\n\n") + ageStatement
+            txt += t("\n\nThe infant is more than 6 hours from birth.\n\n", "\n\nEl bebé tiene más de 6 horas de vida.\n\n", "\n\nLe nouveau-né a plus de 6 heures de vie.\n\n", "\n\nO recém-nascido tem mais de 6 horas de vida.\n\n") + ageStatement
         }
 
         // Offer an override only when a gate (GA or > 6 hours) is the sole barrier,
         // i.e. Criteria A and B are both met. If A or B is not met, no override.
-        presentResult(title: isSpanish ? "Resultado" : "Result", verdict: verdict, color: verdictColor,
+        presentResult(title: t("Result", "Resultado", "Résultat", "Resultado"), verdict: verdict, color: verdictColor,
                       message: txt, allowOverride: (gaOff || ageOff) && aMet && bMet)
     }
 
@@ -224,9 +280,9 @@ class ViewController: UIViewController {
         let ageOff = !sixHoursInd.isOn
 
         var reasons: [String] = []
-        if gaOff { reasons.append(isSpanish ? "edad gestacional (< 36 semanas)" : "gestational age (< 36 weeks)") }
-        if ageOff { reasons.append(isSpanish ? "edad (> 6 horas de vida)" : "age (> 6 hours from birth)") }
-        let reasonText = reasons.joined(separator: isSpanish ? " y " : " and ")
+        if gaOff { reasons.append(t("gestational age (< 36 weeks)", "edad gestacional (< 36 semanas)", "âge gestationnel (< 36 semaines)", "idade gestacional (< 36 semanas)")) }
+        if ageOff { reasons.append(t("age (> 6 hours from birth)", "edad (> 6 horas de vida)", "âge (> 6 heures de vie)", "idade (> 6 horas de vida)")) }
+        let reasonText = reasons.joined(separator: t(" and ", " y ", " et ", " e "))
 
         let aMet = metabolicMet()
         let bMet = encephalopathyMet()
@@ -236,35 +292,42 @@ class ViewController: UIViewController {
         var txt: String
 
         if aMet && bMet {
-            verdict = isSpanish ? "  CUMPLE LOS CRITERIOS (A + B)  " : "  QUALIFIES (CRITERIA A + B)  "
+            verdict = t("  QUALIFIES (CRITERIA A + B)  ", "  CUMPLE LOS CRITERIOS (A + B)  ", "  ADMISSIBLE (CRITÈRES A + B)  ", "  ATENDE AOS CRITÉRIOS (A + B)  ")
             verdictColor = qualifyColor
-            txt = isSpanish ? "Según los criterios A + B, el bebé CUMPLE los criterios para recibir hipotermia terapéutica." : "Based on Criteria A + B, the infant SATISFIES the criteria for therapeutic hypothermia."
+            txt = t("Based on Criteria A + B, the infant satisfies the criteria for therapeutic hypothermia.", "Según los criterios A + B, el bebé cumple los criterios para recibir hipotermia terapéutica.", "Selon les critères A + B, le nouveau-né est admissible à l’hypothermie thérapeutique.", "Com base nos critérios A + B, o recém-nascido atende aos critérios para hipotermia terapêutica.")
         } else if aMet && !bMet {
-            verdict = isSpanish ? "  NO CUMPLE LOS CRITERIOS — REEVALUAR  " : "  DOES NOT QUALIFY \u{2014} REASSESS  "
+            verdict = t("  DOES NOT QUALIFY — REASSESS  ", "  NO CUMPLE LOS CRITERIOS — REEVALUAR  ", "  NON ADMISSIBLE — RÉÉVALUER  ", "  NÃO ATENDE AOS CRITÉRIOS — REAVALIAR  ")
             verdictColor = borderlineColor
-            txt = isSpanish ? "Según los criterios A + B, el bebé no cumple actualmente los criterios. Se cumple el criterio A, pero no el B; se recomiendan evaluaciones neurológicas seriadas." : "Based on Criteria A + B, the infant does not currently satisfy the criteria. Criteria A is met but Criteria B is not; serial neurological examinations are recommended to reassess for evolving encephalopathy."
+            txt = t("Criteria A is met but Criteria B is not; serial neurological examinations are recommended.", "Se cumple el criterio A, pero no el B; se recomiendan evaluaciones neurológicas seriadas.", "Le critère A est satisfait, mais pas le critère B; des examens neurologiques sériés sont recommandés.", "O critério A foi atendido, mas o critério B não; recomenda-se realizar avaliações neurológicas seriadas.")
         } else {
-            verdict = isSpanish ? "  NO CUMPLE LOS CRITERIOS (A + B)  " : "  DOES NOT QUALIFY (CRITERIA A + B)  "
+            verdict = t("  DOES NOT QUALIFY (CRITERIA A + B)  ", "  NO CUMPLE LOS CRITERIOS (A + B)  ", "  NON ADMISSIBLE (CRITÈRES A + B)  ", "  NÃO ATENDE AOS CRITÉRIOS (A + B)  ")
             verdictColor = noQualifyColor
-            txt = isSpanish ? "Según los criterios A + B, el bebé NO cumple los criterios para recibir hipotermia terapéutica." : "Based on Criteria A + B, the infant DOES NOT satisfy the criteria for therapeutic hypothermia."
+            txt = t("Based on Criteria A + B, the infant does not satisfy the criteria for therapeutic hypothermia.", "Según los criterios A + B, el bebé no cumple los criterios para recibir hipotermia terapéutica.", "Selon les critères A + B, le nouveau-né n’est pas admissible à l’hypothermie thérapeutique.", "Com base nos critérios A + B, o recém-nascido não atende aos critérios para hipotermia terapêutica.")
         }
 
-        txt += isSpanish ? "\n\nCriterio A (metabólico/reanimación): " + (aMet ? "cumplido" : "no cumplido") : "\n\nCriteria A (metabolic / resuscitation): " + (aMet ? "met" : "not met")
-        txt += isSpanish ? "\nCriterio B (encefalopatía): " + (bMet ? "cumplido" : "no cumplido") : "\nCriteria B (encephalopathy): " + (bMet ? "met" : "not met")
+        txt += "\n\n" + t("Criteria A (metabolic / resuscitation): ", "Criterio A (metabólico/reanimación): ", "Critère A (métabolique/réanimation) : ", "Critério A (metabólico/ressuscitação): ")
+            + (aMet ? t("met", "cumplido", "satisfait", "atendido") : t("not met", "no cumplido", "non satisfait", "não atendido"))
+        txt += "\n" + t("Criteria B (encephalopathy): ", "Criterio B (encefalopatía): ", "Critère B (encéphalopathie) : ", "Critério B (encefalopatia): ")
+            + (bMet ? t("met", "cumplido", "satisfait", "atendido") : t("not met", "no cumplido", "non satisfait", "não atendido"))
 
-        txt += isSpanish ? "\n\nEsta anulación deja de lado el criterio de \(reasonText). Utilice el juicio clínico junto con la siguiente orientación:" : "\n\nThis override sets aside the \(reasonText) criterion. Use clinical judgement together with the guidance below:"
+        txt += "\n\n" + t(
+            "This override sets aside the \(reasonText) criterion. Use clinical judgement together with the guidance below:",
+            "Esta anulación deja de lado el criterio de \(reasonText). Utilice el juicio clínico junto con la siguiente orientación:",
+            "Cette dérogation écarte le critère \(reasonText). Utilisez votre jugement clinique avec les recommandations ci-dessous :",
+            "Esta exceção desconsidera o critério de \(reasonText). Use o julgamento clínico em conjunto com as orientações abaixo:"
+        )
         if gaOff { txt += "\n\n" + gaStatement }
         if ageOff { txt += "\n\n" + ageStatement }
 
-        presentResult(title: isSpanish ? "Anulación de criterio" : "Override", verdict: verdict, color: verdictColor,
+        presentResult(title: t("Override", "Anulación de criterio", "Dérogation", "Critério desconsiderado"), verdict: verdict, color: verdictColor,
                       message: txt, allowOverride: false)
     }
 
     func displayYesMessage(){
-        presentResult(title: isSpanish ? "Resultado" : "Result",
-                      verdict: isSpanish ? "  CUMPLE LOS CRITERIOS PARA HIPOTERMIA TERAPÉUTICA  " : "  QUALIFIES FOR THERAPEUTIC HYPOTHERMIA  ",
+        presentResult(title: t("Result", "Resultado", "Résultat", "Resultado"),
+                      verdict: t("  QUALIFIES FOR THERAPEUTIC HYPOTHERMIA  ", "  CUMPLE LOS CRITERIOS PARA HIPOTERMIA TERAPÉUTICA  ", "  ADMISSIBLE À L’HYPOTHERMIE THÉRAPEUTIQUE  ", "  ATENDE AOS CRITÉRIOS PARA HIPOTERMIA TERAPÊUTICA  "),
                       color: qualifyColor,
-                      message: isSpanish ? "Cumple los criterios para recibir hipotermia terapéutica. Se cumplen los criterios de elegibilidad A y B." : "Satisfies criteria for therapeutic hypothermia. The qualifying criteria, Criteria A and Criteria B are all met.",
+                      message: t("Satisfies criteria for therapeutic hypothermia. Criteria A and B are met.", "Cumple los criterios para recibir hipotermia terapéutica. Se cumplen los criterios A y B.", "Satisfait aux critères d’hypothermie thérapeutique. Les critères A et B sont satisfaits.", "Atende aos critérios para hipotermia terapêutica. Os critérios A e B foram atendidos."),
                       allowOverride: false)
     }
 
@@ -278,12 +341,12 @@ class ViewController: UIViewController {
             full, preferredStyle: UIAlertController.Style.alert)
 
         if allowOverride {
-            alertController.addAction(UIAlertAction(title: isSpanish ? "Anular criterio" : "Override", style: UIAlertAction.Style.default) { (action) in
+            alertController.addAction(UIAlertAction(title: t("Override", "Anular criterio", "Dérogation", "Desconsiderar critério"), style: UIAlertAction.Style.default) { (action) in
                 self.displayOverrideResult()
             })
         }
 
-        alertController.addAction(UIAlertAction(title: isSpanish ? "Cerrar" : "Dismiss", style: UIAlertAction.Style.cancel, handler: nil))
+        alertController.addAction(UIAlertAction(title: t("Dismiss", "Cerrar", "Fermer", "Fechar"), style: UIAlertAction.Style.cancel, handler: nil))
 
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = NSTextAlignment.left

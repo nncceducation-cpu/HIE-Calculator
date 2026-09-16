@@ -7,9 +7,11 @@
 <script>
   (function () {
     var requested = new URLSearchParams(location.search).get('lang');
-    if (requested === 'en' || requested === 'es') localStorage.setItem('hie-language', requested);
+    if (['en', 'es', 'fr', 'pt'].includes(requested)) localStorage.setItem('hie-language', requested);
     var language = requested || localStorage.getItem('hie-language') || (navigator.language || 'en').toLowerCase().split('-')[0];
-    if (language !== 'es') location.replace('privacy.html?lang=en');
+    if (language === 'en') location.replace('privacy.html?lang=en');
+    if (language === 'fr') location.replace('privacy-fr.html?lang=fr');
+    if (language === 'pt') location.replace('privacy-pt.html?lang=pt');
   }());
 </script>
 <style>
@@ -24,7 +26,7 @@
 </style>
 </head>
 <body>
-  <nav class="langbar" aria-label="Idioma"><a href="privacy.html?lang=en" lang="en">English</a><a class="active" href="privacy-es.html?lang=es" lang="es">Español</a></nav>
+  <nav class="langbar" aria-label="Idioma"><a href="privacy.html?lang=en" lang="en">EN</a><a href="privacy-fr.html?lang=fr" lang="fr">FR</a><a href="privacy-pt.html?lang=pt" lang="pt">PT</a><a class="active" href="privacy-es.html?lang=es" lang="es">ES</a></nav>
   <h1>Política de privacidad — Calculadora de EHI</h1>
   <p class="updated">Última actualización: 23 de julio de 2026</p>
 
