@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de EHI — Política de privacidad</title>
+<script>
+  (function () {
+    var requested = new URLSearchParams(location.search).get('lang');
+    if (requested === 'en' || requested === 'es') localStorage.setItem('hie-language', requested);
+    var language = requested || localStorage.getItem('hie-language') || (navigator.language || 'en').toLowerCase().split('-')[0];
+    if (language !== 'es') location.replace('privacy.html?lang=en');
+  }());
+</script>
+<style>
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+       max-width:760px;margin:0 auto;padding:32px 20px;color:#1a1a1a;line-height:1.6;}
+  h1{font-size:26px;margin-bottom:4px;}
+  .updated{color:#666;font-size:14px;margin-top:0;}
+  h2{font-size:18px;margin-top:28px;}
+  a{color:#0067c5;}
+  footer{margin-top:40px;font-size:13px;color:#666;border-top:1px solid #e6e6e6;padding-top:16px;}
+  .langbar{text-align:right}.langbar a{margin-left:10px}.langbar .active{font-weight:700;color:#111;text-decoration:none}
+</style>
+</head>
+<body>
+  <nav class="langbar" aria-label="Idioma"><a href="privacy.html?lang=en" lang="en">English</a><a class="active" href="privacy-es.html?lang=es" lang="es">Español</a></nav>
+  <h1>Política de privacidad — Calculadora de EHI</h1>
+  <p class="updated">Última actualización: 23 de julio de 2026</p>
+
+  <p>Esta Política de privacidad explica cómo la aplicación móvil <strong>Calculadora de
+  EHI</strong> (la «Aplicación») gestiona la información. Léala antes de utilizar la Aplicación.</p>
+
+  <h2>No se recopilan datos</h2>
+  <p>La Aplicación <strong>no</strong> recopila, almacena, transmite, vende ni comparte datos
+  personales o de salud. Todos los cálculos se realizan en su dispositivo. La Aplicación no
+  requiere una cuenta, no utiliza servicios de análisis ni publicidad y no realiza seguimiento.
+  Los valores clínicos que introduzca se utilizan únicamente para mostrar un resultado; no se
+  guardan ni se envían a ningún lugar.</p>
+
+  <h2>Sin servicios de terceros</h2>
+  <p>La Aplicación no integra redes publicitarias ni servicios de análisis de terceros. Solo
+  necesita conexión a internet para mostrar una figura de referencia opcional alojada por la
+  editorial original; cuando se carga esa figura, no se envía información sobre usted.</p>
+
+  <h2>Privacidad de los menores</h2>
+  <p>La Aplicación está destinada a profesionales de la salud y no recopila intencionadamente
+  información de ninguna persona, incluidos los menores.</p>
+
+  <h2>Uso previsto y aviso legal</h2>
+  <p>La Aplicación es una herramienta de apoyo para la toma de decisiones clínicas. <strong>No
+  sustituye el juicio ni la evaluación clínica</strong> y no reemplaza el asesoramiento médico
+  profesional. El desarrollador no se responsabiliza de ninguna decisión tomada mediante la Aplicación.</p>
+
+  <h2>Cambios en esta política</h2>
+  <p>Esta política puede actualizarse periódicamente. La fecha de «Última actualización» que
+  aparece arriba corresponde a la revisión más reciente.</p>
+
+  <h2>Contacto</h2>
+  <p>Puede enviar sus preguntas sobre esta política a
+  <a href="mailto:nncceducation@gmail.com">nncceducation@gmail.com</a>.</p>
+
+  <footer>Calculadora de EHI — una calculadora de apoyo para determinar la elegibilidad para
+  hipotermia terapéutica neonatal. Esta herramienta apoya el juicio clínico, pero no lo sustituye.</footer>
+</body>
+</html>

@@ -1,0 +1,536 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B0948B121F098FBE0045F010 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0948B111F098FBE0045F010 /* AppDelegate.swift */; };
+		B0948B141F098FBE0045F010 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0948B131F098FBE0045F010 /* ViewController.swift */; };
+		B0948B171F098FBE0045F010 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0948B151F098FBE0045F010 /* Main.storyboard */; };
+		B0948B191F098FBE0045F010 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0948B181F098FBE0045F010 /* Assets.xcassets */; };
+		B0948B1C1F098FBE0045F010 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0948B1A1F098FBE0045F010 /* LaunchScreen.storyboard */; };
+		B0948B271F098FBE0045F010 /* HIE_CalcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0948B261F098FBE0045F010 /* HIE_CalcTests.swift */; };
+		B0948B321F098FBE0045F010 /* HIE_CalcUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0948B311F098FBE0045F010 /* HIE_CalcUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B0948B231F098FBE0045F010 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0948B061F098FBE0045F010 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B0948B0D1F098FBE0045F010;
+			remoteInfo = "HIE Calc";
+		};
+		B0948B2E1F098FBE0045F010 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0948B061F098FBE0045F010 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B0948B0D1F098FBE0045F010;
+			remoteInfo = "HIE Calc";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B0948B0E1F098FBE0045F010 /* HIE Calc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HIE Calc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0948B111F098FBE0045F010 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B0948B131F098FBE0045F010 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B0948B161F098FBE0045F010 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B0948B181F098FBE0045F010 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B0948B1B1F098FBE0045F010 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B0948B1D1F098FBE0045F010 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0948B221F098FBE0045F010 /* HIE CalcTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HIE CalcTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0948B261F098FBE0045F010 /* HIE_CalcTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HIE_CalcTests.swift; sourceTree = "<group>"; };
+		B0948B281F098FBE0045F010 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0948B2D1F098FBE0045F010 /* HIE CalcUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HIE CalcUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0948B311F098FBE0045F010 /* HIE_CalcUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HIE_CalcUITests.swift; sourceTree = "<group>"; };
+		B0948B331F098FBE0045F010 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B0948B0B1F098FBE0045F010 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0948B1F1F098FBE0045F010 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0948B2A1F098FBE0045F010 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B0948B051F098FBE0045F010 = {
+			isa = PBXGroup;
+			children = (
+				B0948B101F098FBE0045F010 /* HIE Calc */,
+				B0948B251F098FBE0045F010 /* HIE CalcTests */,
+				B0948B301F098FBE0045F010 /* HIE CalcUITests */,
+				B0948B0F1F098FBE0045F010 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B0948B0F1F098FBE0045F010 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B0948B0E1F098FBE0045F010 /* HIE Calc.app */,
+				B0948B221F098FBE0045F010 /* HIE CalcTests.xctest */,
+				B0948B2D1F098FBE0045F010 /* HIE CalcUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B0948B101F098FBE0045F010 /* HIE Calc */ = {
+			isa = PBXGroup;
+			children = (
+				B0948B111F098FBE0045F010 /* AppDelegate.swift */,
+				B0948B131F098FBE0045F010 /* ViewController.swift */,
+				B0948B151F098FBE0045F010 /* Main.storyboard */,
+				B0948B181F098FBE0045F010 /* Assets.xcassets */,
+				B0948B1A1F098FBE0045F010 /* LaunchScreen.storyboard */,
+				B0948B1D1F098FBE0045F010 /* Info.plist */,
+			);
+			path = "HIE Calc";
+			sourceTree = "<group>";
+		};
+		B0948B251F098FBE0045F010 /* HIE CalcTests */ = {
+			isa = PBXGroup;
+			children = (
+				B0948B261F098FBE0045F010 /* HIE_CalcTests.swift */,
+				B0948B281F098FBE0045F010 /* Info.plist */,
+			);
+			path = "HIE CalcTests";
+			sourceTree = "<group>";
+		};
+		B0948B301F098FBE0045F010 /* HIE CalcUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B0948B311F098FBE0045F010 /* HIE_CalcUITests.swift */,
+				B0948B331F098FBE0045F010 /* Info.plist */,
+			);
+			path = "HIE CalcUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B0948B0D1F098FBE0045F010 /* HIE Calc */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B0948B361F098FBE0045F010 /* Build configuration list for PBXNativeTarget "HIE Calc" */;
+			buildPhases = (
+				B0948B0A1F098FBE0045F010 /* Sources */,
+				B0948B0B1F098FBE0045F010 /* Frameworks */,
+				B0948B0C1F098FBE0045F010 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "HIE Calc";
+			productName = "HIE Calc";
+			productReference = B0948B0E1F098FBE0045F010 /* HIE Calc.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B0948B211F098FBE0045F010 /* HIE CalcTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B0948B391F098FBE0045F010 /* Build configuration list for PBXNativeTarget "HIE CalcTests" */;
+			buildPhases = (
+				B0948B1E1F098FBE0045F010 /* Sources */,
+				B0948B1F1F098FBE0045F010 /* Frameworks */,
+				B0948B201F098FBE0045F010 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B0948B241F098FBE0045F010 /* PBXTargetDependency */,
+			);
+			name = "HIE CalcTests";
+			productName = "HIE CalcTests";
+			productReference = B0948B221F098FBE0045F010 /* HIE CalcTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B0948B2C1F098FBE0045F010 /* HIE CalcUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B0948B3C1F098FBE0045F010 /* Build configuration list for PBXNativeTarget "HIE CalcUITests" */;
+			buildPhases = (
+				B0948B291F098FBE0045F010 /* Sources */,
+				B0948B2A1F098FBE0045F010 /* Frameworks */,
+				B0948B2B1F098FBE0045F010 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B0948B2F1F098FBE0045F010 /* PBXTargetDependency */,
+			);
+			name = "HIE CalcUITests";
+			productName = "HIE CalcUITests";
+			productReference = B0948B2D1F098FBE0045F010 /* HIE CalcUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B0948B061F098FBE0045F010 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Rohini Vivek";
+				TargetAttributes = {
+					B0948B0D1F098FBE0045F010 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = E4HFYAQPW5;
+						ProvisioningStyle = Automatic;
+					};
+					B0948B211F098FBE0045F010 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = B0948B0D1F098FBE0045F010;
+					};
+					B0948B2C1F098FBE0045F010 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = B0948B0D1F098FBE0045F010;
+					};
+				};
+			};
+			buildConfigurationList = B0948B091F098FBE0045F010 /* Build configuration list for PBXProject "HIE Calc" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B0948B051F098FBE0045F010;
+			productRefGroup = B0948B0F1F098FBE0045F010 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B0948B0D1F098FBE0045F010 /* HIE Calc */,
+				B0948B211F098FBE0045F010 /* HIE CalcTests */,
+				B0948B2C1F098FBE0045F010 /* HIE CalcUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B0948B0C1F098FBE0045F010 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0948B1C1F098FBE0045F010 /* LaunchScreen.storyboard in Resources */,
+				B0948B191F098FBE0045F010 /* Assets.xcassets in Resources */,
+				B0948B171F098FBE0045F010 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0948B201F098FBE0045F010 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0948B2B1F098FBE0045F010 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B0948B0A1F098FBE0045F010 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0948B141F098FBE0045F010 /* ViewController.swift in Sources */,
+				B0948B121F098FBE0045F010 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0948B1E1F098FBE0045F010 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0948B271F098FBE0045F010 /* HIE_CalcTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0948B291F098FBE0045F010 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0948B321F098FBE0045F010 /* HIE_CalcUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B0948B241F098FBE0045F010 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B0948B0D1F098FBE0045F010 /* HIE Calc */;
+			targetProxy = B0948B231F098FBE0045F010 /* PBXContainerItemProxy */;
+		};
+		B0948B2F1F098FBE0045F010 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B0948B0D1F098FBE0045F010 /* HIE Calc */;
+			targetProxy = B0948B2E1F098FBE0045F010 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B0948B151F098FBE0045F010 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B0948B161F098FBE0045F010 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B0948B1A1F098FBE0045F010 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B0948B1B1F098FBE0045F010 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B0948B341F098FBE0045F010 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B0948B351F098FBE0045F010 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B0948B371F098FBE0045F010 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = E4HFYAQPW5;
+				INFOPLIST_FILE = "HIE Calc/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.HIE-Calc";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		B0948B381F098FBE0045F010 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = E4HFYAQPW5;
+				INFOPLIST_FILE = "HIE Calc/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.HIE-Calc";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		B0948B3A1F098FBE0045F010 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "HIE CalcTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.HIE-CalcTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HIE Calc.app/HIE Calc";
+			};
+			name = Debug;
+		};
+		B0948B3B1F098FBE0045F010 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "HIE CalcTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.HIE-CalcTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HIE Calc.app/HIE Calc";
+			};
+			name = Release;
+		};
+		B0948B3D1F098FBE0045F010 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = "HIE CalcUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.HIE-CalcUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "HIE Calc";
+			};
+			name = Debug;
+		};
+		B0948B3E1F098FBE0045F010 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = "HIE CalcUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.HIE-CalcUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "HIE Calc";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B0948B091F098FBE0045F010 /* Build configuration list for PBXProject "HIE Calc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0948B341F098FBE0045F010 /* Debug */,
+				B0948B351F098FBE0045F010 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B0948B361F098FBE0045F010 /* Build configuration list for PBXNativeTarget "HIE Calc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0948B371F098FBE0045F010 /* Debug */,
+				B0948B381F098FBE0045F010 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B0948B391F098FBE0045F010 /* Build configuration list for PBXNativeTarget "HIE CalcTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0948B3A1F098FBE0045F010 /* Debug */,
+				B0948B3B1F098FBE0045F010 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B0948B3C1F098FBE0045F010 /* Build configuration list for PBXNativeTarget "HIE CalcUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0948B3D1F098FBE0045F010 /* Debug */,
+				B0948B3E1F098FBE0045F010 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B0948B061F098FBE0045F010 /* Project object */;
+}
