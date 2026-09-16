@@ -14,6 +14,7 @@
 		B0948B1C1F098FBE0045F010 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0948B1A1F098FBE0045F010 /* LaunchScreen.storyboard */; };
 		B0948B271F098FBE0045F010 /* HIE_CalcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0948B261F098FBE0045F010 /* HIE_CalcTests.swift */; };
 		B0948B321F098FBE0045F010 /* HIE_CalcUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0948B311F098FBE0045F010 /* HIE_CalcUITests.swift */; };
+		D00100001F098FBE0045F010 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D00600001F098FBE0045F010 /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,10 @@
 		B0948B2D1F098FBE0045F010 /* HIE CalcUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HIE CalcUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0948B311F098FBE0045F010 /* HIE_CalcUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HIE_CalcUITests.swift; sourceTree = "<group>"; };
 		B0948B331F098FBE0045F010 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D00200001F098FBE0045F010 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D00300001F098FBE0045F010 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D00400001F098FBE0045F010 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D00500001F098FBE0045F010 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +108,7 @@
 				B0948B181F098FBE0045F010 /* Assets.xcassets */,
 				B0948B1A1F098FBE0045F010 /* LaunchScreen.storyboard */,
 				B0948B1D1F098FBE0045F010 /* Info.plist */,
+				D00600001F098FBE0045F010 /* InfoPlist.strings */,
 			);
 			path = "HIE Calc";
 			sourceTree = "<group>";
@@ -193,7 +199,7 @@
 				TargetAttributes = {
 					B0948B0D1F098FBE0045F010 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = E4HFYAQPW5;
+						DevelopmentTeam = X7ZRXAX7NT;
 						ProvisioningStyle = Automatic;
 					};
 					B0948B211F098FBE0045F010 = {
@@ -214,6 +220,9 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				fr,
+				pt,
+				es,
 				Base,
 			);
 			mainGroup = B0948B051F098FBE0045F010;
@@ -233,6 +242,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D00100001F098FBE0045F010 /* InfoPlist.strings in Resources */,
 				B0948B1C1F098FBE0045F010 /* LaunchScreen.storyboard in Resources */,
 				B0948B191F098FBE0045F010 /* Assets.xcassets in Resources */,
 				B0948B171F098FBE0045F010 /* Main.storyboard in Resources */,
@@ -282,6 +292,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D00600001F098FBE0045F010 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D00200001F098FBE0045F010 /* en */,
+				D00300001F098FBE0045F010 /* fr */,
+				D00400001F098FBE0045F010 /* pt */,
+				D00500001F098FBE0045F010 /* es */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin PBXTargetDependency section */
 		B0948B241F098FBE0045F010 /* PBXTargetDependency */ = {
@@ -357,7 +381,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -401,7 +425,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -413,12 +437,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = E4HFYAQPW5;
+				DEVELOPMENT_TEAM = X7ZRXAX7NT;
 				INFOPLIST_FILE = "HIE Calc/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.HIE-Calc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -427,12 +451,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = E4HFYAQPW5;
+				DEVELOPMENT_TEAM = X7ZRXAX7NT;
 				INFOPLIST_FILE = "HIE Calc/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.HIE-Calc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -446,7 +470,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.HIE-CalcTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HIE Calc.app/HIE Calc";
 			};
 			name = Debug;
@@ -460,7 +484,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.HIE-CalcTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HIE Calc.app/HIE Calc";
 			};
 			name = Release;
@@ -473,7 +497,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.HIE-CalcUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = "HIE Calc";
 			};
 			name = Debug;
@@ -486,7 +510,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.HIE-CalcUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = "HIE Calc";
 			};
 			name = Release;

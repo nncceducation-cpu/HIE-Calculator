@@ -1,0 +1,23 @@
+name: Verify iOS project
+
+on:
+  push:
+    paths:
+      - "ios-source/**"
+      - ".github/workflows/ios-verify.yml"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build without signing
+        run: |
+          xcodebuild \
+            -project "ios-source/HIE Calc/HIE Calc.xcodeproj" \
+            -target "HIE Calc" \
+            -configuration Release \
+            -sdk iphonesimulator \
+            CODE_SIGNING_ALLOWED=NO \
+            build
