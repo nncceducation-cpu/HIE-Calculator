@@ -90,7 +90,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: HIE-Calculator-iOS-2.3-build-9
+          name: HIE-Calculator-iOS-2.4-build-10
           path: ${{ runner.temp }}/export/*.ipa
           if-no-files-found: ignore
           retention-days: 7

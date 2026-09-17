@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import WebKit
 
 class ViewController: UIViewController {
+
+    private var webView: WKWebView!
 
     private var languageCode: String {
         let code = Locale.preferredLanguages.first?.lowercased() ?? "en"
@@ -46,13 +49,32 @@ class ViewController: UIViewController {
     @IBOutlet var SeizureInd: UISwitch!
 
     override func viewDidAppear(_ animated: Bool) {
-        displayDisclaimer()
+        super.viewDidAppear(animated)
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if languageCode != "en" { localizeInterface(in: view) }
+        // The legacy storyboard is retained only so its existing outlet
+        // connections continue to decode safely. The current calculator is
+        // the shared, maintained web interface used by Android and the web.
+        view.subviews.forEach { $0.removeFromSuperview() }
+
+        let configuration = WKWebViewConfiguration()
+        configuration.websiteDataStore = .default()
+        webView = WKWebView(frame: .zero, configuration: configuration)
+        webView.translatesAutoresizingMaskIntoConstraints = false
+        webView.allowsBackForwardNavigationGestures = false
+        view.addSubview(webView)
+        NSLayoutConstraint.activate([
+            webView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            webView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            webView.topAnchor.constraint(equalTo: view.topAnchor),
+            webView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+
+        let url = URL(string: "https://nncceducation-cpu.github.io/HIE-Calculator/?platform=ios&version=2.4")!
+        webView.load(URLRequest(url: url, cachePolicy: .reloadRevalidatingCacheData, timeoutInterval: 30))
     }
 
     private func localizeInterface(in root: UIView) {
